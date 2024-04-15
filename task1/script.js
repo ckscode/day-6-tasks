@@ -6,24 +6,21 @@ class Movie{
         this.studio=studio;
         this.rating=rating;
 }
+static getPG(movies){
+  const result = movies.filter((item)=>item.rating === "PG");
+  result.forEach((item)=>{ console.log(item.title) })
+  }
+} 
 
-}
+
 
 
 const viduthalai = new Movie("Viduthalai","RS entertainment","A");
 const premalu = new Movie("Premalu","Ettan Productions","PG");
 //d.new instance of the class Movie is created
-const jamesBond = new Movie("Casino Royale","Eon Productions","PG13");
+const jamesBond = new Movie("Casino Royale","Eon Productions","PG");
 
 //c.function to filter the movies with "PG" rating
 const movies = [viduthalai,jamesBond,premalu];
-const getPG= (arr) =>{
-  const PGMovies=arr.filter((item)=>{
-    return item.rating === "PG"
-  })
-
-  PGMovies.map((item)=>console.log(item.title))
-  
-} 
-getPG(movies);
+Movie.getPG(movies);
 
